@@ -1,7 +1,3 @@
-// example12.4.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
-//
-
-#include "pch.h"
 #include <iostream>
 using namespace std;
 
@@ -23,32 +19,33 @@ public:
 	{
 		return m_raw_pointer_ptr;
 	}
-
 };
 
-class Data
+class Date
 {
 private:
 	int day_, month_, year_;
 	string data_in_string_;
+
 public:
 	//constructor that initializes the object to a day, month and year
-	Data(int input_day, int input_month, int input_year)
+	Date(int input_day, int input_month, int input_year)
 		:day_(input_day), month_(input_month), year_(input_year) {};
 
-	void DisplayData()
+	void DisplayDate()
 	{
 		cout << day_ << " / " << month_ << " / " << year_ << endl;
 	}
 };
+
 int main()
 {
 	smart_pointer<int> dynamic_int_ptr(new int(42));
 	cout << "Dynamically allocated integer value = " << *dynamic_int_ptr << endl;
 
-	smart_pointer<Data> data_ptr(new Data(25, 11, 2018));
+	smart_pointer<Date> data_ptr(new Date(25, 11, 2018));
 	cout << "Data is = ";
-	data_ptr->DisplayData();
+	data_ptr->DisplayDate();
 
 	return 0;
 }
