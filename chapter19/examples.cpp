@@ -140,3 +140,35 @@ void example5()
 	else
 		cout << "Contact not found" << endl;
 }
+
+void example6()
+{
+	//instantiate unordered_set of int to string:
+	unordered_set<int> usetInt;
+
+	//usetInt = { 1000,-3,2011,300,-1000,989,-300,111 };
+	usetInt.insert(1000);
+	usetInt.insert(-3);
+	usetInt.insert(2011);
+	usetInt.insert(300);
+	usetInt.insert(-1000);
+	usetInt.insert(989);
+	usetInt.insert(-300);
+	usetInt.insert(111);
+
+	DisplayContents(usetInt);
+	usetInt.insert(999);
+	DisplayContents(usetInt);
+
+	//find
+	cout << "Enter int you want to check for existence in set: ";
+	int key = 0;
+	cin >> key;
+	auto pairthousand_i = usetInt.find(key);
+
+	if (pairthousand_i != usetInt.cend())
+		cout << *pairthousand_i << " found in set" << endl;
+	else
+		cout << key << " not available in set" << endl;
+
+}

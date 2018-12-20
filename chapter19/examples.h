@@ -2,6 +2,7 @@
 #define EXAMPLES_H_
 
 #include <set>
+#include <unordered_set>
 #include <iostream>
 #include <string>
 using namespace std;
@@ -68,5 +69,6 @@ public:
 	operator const char*() const;
 };
 void example5();
+void example6();
 
 #endif // !EXAMPLES_H_
